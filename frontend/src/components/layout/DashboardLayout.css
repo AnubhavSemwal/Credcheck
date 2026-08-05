@@ -1,0 +1,34 @@
+.dashboard-layout {
+  min-height: 100vh;
+  background: #f5f7fb;
+}
+
+.dashboard-main {
+  min-height: 100vh;
+  margin-left: 260px;
+  padding: 28px 35px;
+}
+
+.dashboard-content {
+  padding-top: 28px;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .dashboard-main {
+    margin-left: 80px;
+    padding: 25px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .dashboard-main {
+    margin-left: 0;
+    padding: 20px 15px 80px;
+  }
+
+  .dashboard-content {
+    padding-top: 20px;
+  }
+}

@@ -1,0 +1,1181 @@
+/* =========================================
+   STUDENT DASHBOARD
+========================================= */
+
+.student-dashboard {
+  min-height: 100vh;
+  padding: 30px;
+  background: #f5f7fb;
+  color: #172033;
+}
+
+
+/* =========================================
+   HERO SECTION
+========================================= */
+
+.dashboard-hero {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 280px;
+  padding: 45px 55px;
+  margin-bottom: 30px;
+  overflow: hidden;
+  border-radius: 24px;
+  background: linear-gradient(
+    135deg,
+    #1e3a8a 0%,
+    #2563eb 50%,
+    #4f46e5 100%
+  );
+  color: white;
+  box-shadow: 0 20px 45px rgba(37, 99, 235, 0.22);
+}
+
+
+/* Decorative circles */
+
+.dashboard-hero::before,
+.dashboard-hero::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.dashboard-hero::before {
+  width: 300px;
+  height: 300px;
+  right: 180px;
+  top: -150px;
+}
+
+.dashboard-hero::after {
+  width: 220px;
+  height: 220px;
+  right: -60px;
+  bottom: -100px;
+}
+
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 650px;
+}
+
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  margin-bottom: 18px;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+
+.hero-content h1 {
+  margin: 0 0 12px;
+  font-size: 42px;
+  line-height: 1.15;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+
+.hero-content h1 span {
+  color: #bfdbfe;
+}
+
+
+.hero-content p {
+  max-width: 540px;
+  margin: 0 0 25px;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+
+.hero-upload-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 20px;
+  border: none;
+  border-radius: 12px;
+  background: white;
+  color: #1d4ed8;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+
+.hero-upload-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+}
+
+
+/* =========================================
+   HERO VISUAL
+========================================= */
+
+.hero-visual {
+  position: relative;
+  z-index: 2;
+  width: 280px;
+  height: 220px;
+}
+
+
+.hero-circle {
+  position: absolute;
+  top: 25px;
+  left: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow:
+    0 0 0 20px rgba(255, 255, 255, 0.04),
+    0 0 0 40px rgba(255, 255, 255, 0.03);
+}
+
+
+.hero-circle i {
+  font-size: 70px;
+  color: white;
+}
+
+
+.floating-card {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.95);
+  color: #1e3a8a;
+  font-size: 12px;
+  font-weight: 700;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+
+.floating-card i {
+  font-size: 16px;
+}
+
+
+.floating-card-one {
+  top: 15px;
+  right: 0;
+}
+
+
+.floating-card-two {
+  bottom: 10px;
+  left: 5px;
+}
+
+
+/* =========================================
+   STATISTICS
+========================================= */
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+
+.stat-card {
+  position: relative;
+  padding: 22px;
+  border-radius: 18px;
+  background: white;
+  border: 1px solid #e8ebf2;
+  box-shadow: 0 8px 25px rgba(15, 23, 42, 0.05);
+  transition: all 0.25s ease;
+  overflow: hidden;
+}
+
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(15, 23, 42, 0.1);
+}
+
+
+.stat-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+
+.stat-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 13px;
+  font-size: 22px;
+}
+
+
+.stat-blue .stat-icon {
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+
+.stat-green .stat-icon {
+  background: #ecfdf5;
+  color: #059669;
+}
+
+
+.stat-orange .stat-icon {
+  background: #fff7ed;
+  color: #ea580c;
+}
+
+
+.stat-red .stat-icon {
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+
+.stat-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #f8fafc;
+  color: #64748b;
+  font-size: 13px;
+}
+
+
+.stat-content span {
+  display: block;
+  margin-bottom: 5px;
+  color: #64748b;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+
+.stat-content strong {
+  display: block;
+  color: #172033;
+  font-size: 30px;
+  font-weight: 800;
+}
+
+
+/* =========================================
+   CERTIFICATE SECTION
+========================================= */
+
+.certificates-section {
+  padding: 30px;
+  border-radius: 20px;
+  background: white;
+  border: 1px solid #e8ebf2;
+  box-shadow: 0 8px 25px rgba(15, 23, 42, 0.04);
+}
+
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 8px;
+  color: #2563eb;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+
+.section-header h2 {
+  margin: 0 0 6px;
+  color: #172033;
+  font-size: 26px;
+  font-weight: 800;
+}
+
+
+.section-header p {
+  margin: 0;
+  color: #64748b;
+  font-size: 14px;
+}
+
+
+/* =========================================
+   ACTION BUTTONS
+========================================= */
+
+.certificate-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
+.refresh-button,
+.upload-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 17px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+
+.refresh-button {
+  background: white;
+  border: 1px solid #dfe4ec;
+  color: #475569;
+}
+
+
+.refresh-button:hover {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+}
+
+
+.upload-button {
+  background: #2563eb;
+  border: 1px solid #2563eb;
+  color: white;
+  box-shadow: 0 6px 15px rgba(37, 99, 235, 0.2);
+}
+
+
+.upload-button:hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(37, 99, 235, 0.25);
+}
+
+
+/* =========================================
+   CERTIFICATE GRID
+========================================= */
+
+.certificate-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+
+/* =========================================
+   CERTIFICATE CARD
+========================================= */
+
+.certificate-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 300px;
+  padding: 22px;
+  border-radius: 17px;
+  background: #ffffff;
+  border: 1px solid #e7eaf0;
+  transition: all 0.3s ease;
+}
+
+
+.certificate-card:hover {
+  transform: translateY(-6px);
+  border-color: #bfdbfe;
+  box-shadow: 0 15px 35px rgba(37, 99, 235, 0.1);
+}
+
+
+.certificate-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 22px;
+}
+
+
+.certificate-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 13px;
+  background: #eff6ff;
+  color: #2563eb;
+  font-size: 21px;
+}
+
+
+/* =========================================
+   STATUS BADGES
+========================================= */
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 11px;
+  border-radius: 50px;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: capitalize;
+}
+
+
+.status-badge.approved {
+  background: #ecfdf5;
+  color: #047857;
+}
+
+
+.status-badge.pending {
+  background: #fff7ed;
+  color: #c2410c;
+}
+
+
+.status-badge.rejected {
+  background: #fef2f2;
+  color: #b91c1c;
+}
+
+
+/* =========================================
+   CERTIFICATE INFO
+========================================= */
+
+.certificate-info {
+  flex: 1;
+}
+
+
+.certificate-info h3 {
+  margin: 0 0 18px;
+  color: #172033;
+  font-size: 18px;
+  line-height: 1.4;
+  font-weight: 750;
+}
+
+
+.certificate-detail {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 11px;
+  color: #64748b;
+  font-size: 13px;
+}
+
+
+.certificate-detail i {
+  width: 18px;
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+
+.certificate-detail span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+/* =========================================
+   CARD FOOTER
+========================================= */
+
+.certificate-card-footer {
+  display: flex;
+  gap: 9px;
+  padding-top: 18px;
+  margin-top: 18px;
+  border-top: 1px solid #eef0f4;
+}
+
+
+.view-button,
+.qr-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  flex: 1;
+  min-height: 40px;
+  border-radius: 9px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+
+.view-button {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  color: #334155;
+}
+
+
+.view-button:hover {
+  background: #f1f5f9;
+}
+
+
+.qr-button {
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  color: #2563eb;
+}
+
+
+.qr-button:hover {
+  background: #dbeafe;
+}
+
+
+/* =========================================
+   LOADING / EMPTY STATE
+========================================= */
+
+.dashboard-message {
+  padding: 70px 30px;
+  text-align: center;
+}
+
+
+.dashboard-message h3 {
+  margin: 15px 0 8px;
+  color: #172033;
+  font-size: 20px;
+}
+
+
+.dashboard-message p {
+  margin: 0 auto 22px;
+  max-width: 430px;
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+
+.loading-animation,
+.empty-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+  border-radius: 50%;
+  background: #eff6ff;
+  color: #2563eb;
+  font-size: 35px;
+}
+
+
+.loading-animation i {
+  animation: pulse 1.5s infinite;
+}
+
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.15);
+    opacity: 0.6;
+  }
+
+}
+
+
+.empty-upload-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 10px;
+  background: #2563eb;
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+
+.empty-upload-button:hover {
+  background: #1d4ed8;
+}
+
+
+/* =========================================
+   MODAL OVERLAY
+========================================= */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(6px);
+}
+
+
+/* =========================================
+   UPLOAD MODAL
+========================================= */
+
+.upload-modal,
+.qr-modal {
+  width: 100%;
+  max-width: 550px;
+  max-height: 90vh;
+  overflow-y: auto;
+  border-radius: 20px;
+  background: white;
+  box-shadow: 0 30px 80px rgba(15, 23, 42, 0.25);
+  animation: modalAppear 0.25s ease;
+}
+
+
+@keyframes modalAppear {
+
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+}
+
+
+.modal-header,
+.qr-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 25px 28px;
+  border-bottom: 1px solid #eef0f4;
+}
+
+
+.modal-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 8px;
+  color: #2563eb;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+
+.modal-header h2,
+.qr-modal-header h2 {
+  margin: 0 0 5px;
+  color: #172033;
+  font-size: 22px;
+}
+
+
+.modal-header p {
+  margin: 0;
+  color: #64748b;
+  font-size: 13px;
+}
+
+
+.close-modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 9px;
+  background: #f8fafc;
+  color: #64748b;
+  cursor: pointer;
+}
+
+
+.close-modal:hover {
+  background: #f1f5f9;
+  color: #172033;
+}
+
+
+/* =========================================
+   UPLOAD FORM
+========================================= */
+
+.upload-form {
+  padding: 28px;
+}
+
+
+.form-group {
+  margin-bottom: 19px;
+}
+
+
+.form-group label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 8px;
+  color: #334155;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+
+.form-group label i {
+  color: #2563eb;
+}
+
+
+.form-group input {
+  width: 100%;
+  box-sizing: border-box;
+  height: 46px;
+  padding: 0 13px;
+  border: 1px solid #dfe4ec;
+  border-radius: 10px;
+  outline: none;
+  background: white;
+  color: #172033;
+  font-size: 13px;
+  transition: all 0.2s ease;
+}
+
+
+.form-group input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+
+.file-upload-box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 130px;
+  padding: 20px;
+  overflow: hidden;
+  border: 2px dashed #bfdbfe;
+  border-radius: 13px;
+  background: #f8fbff;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+
+.file-upload-box:hover {
+  background: #eff6ff;
+  border-color: #2563eb;
+}
+
+
+.file-upload-box > i {
+  margin-bottom: 8px;
+  color: #2563eb;
+  font-size: 30px;
+}
+
+
+.file-upload-box p {
+  max-width: 90%;
+  margin: 0 0 5px;
+  color: #334155;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+
+.file-upload-box span {
+  color: #94a3b8;
+  font-size: 11px;
+}
+
+
+.file-upload-box input[type="file"] {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+
+.submit-upload-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  height: 48px;
+  margin-top: 8px;
+  border: none;
+  border-radius: 11px;
+  background: #2563eb;
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+
+.submit-upload-button:hover:not(:disabled) {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(37, 99, 235, 0.2);
+}
+
+
+.submit-upload-button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+
+/* =========================================
+   BUTTON SPINNER
+========================================= */
+
+.button-spinner {
+  width: 17px;
+  height: 17px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+
+@keyframes spin {
+
+  to {
+    transform: rotate(360deg);
+  }
+
+}
+
+
+/* =========================================
+   QR MODAL
+========================================= */
+
+.qr-modal {
+  max-width: 430px;
+}
+
+
+.qr-modal-content {
+  padding: 35px 28px;
+  text-align: center;
+}
+
+
+.qr-image {
+  display: block;
+  width: 220px;
+  height: 220px;
+  margin: 0 auto 22px;
+  padding: 10px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  background: white;
+}
+
+
+.qr-modal-content h3 {
+  margin: 0 0 8px;
+  color: #172033;
+  font-size: 18px;
+}
+
+
+.qr-modal-content p {
+  margin: 0 0 18px;
+  color: #64748b;
+  font-size: 13px;
+}
+
+
+.qr-verification-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  max-width: 100%;
+  padding: 10px 12px;
+  border-radius: 9px;
+  background: #f8fafc;
+  color: #2563eb;
+  font-size: 11px;
+  overflow: hidden;
+}
+
+
+.qr-verification-link span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+.qr-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 220px;
+}
+
+
+/* =========================================
+   RESPONSIVE - TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+
+  .certificate-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+
+  .hero-visual {
+    transform: scale(0.85);
+    margin-right: -30px;
+  }
+
+}
+
+
+/* =========================================
+   RESPONSIVE - MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+  .student-dashboard {
+    padding: 18px;
+  }
+
+
+  .dashboard-hero {
+    min-height: auto;
+    padding: 30px 25px;
+  }
+
+
+  .hero-content h1 {
+    font-size: 31px;
+  }
+
+
+  .hero-content p {
+    font-size: 14px;
+  }
+
+
+  .hero-visual {
+    display: none;
+  }
+
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+
+  .stat-card {
+    padding: 17px;
+  }
+
+
+  .stat-content strong {
+    font-size: 25px;
+  }
+
+
+  .certificates-section {
+    padding: 20px;
+  }
+
+
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+
+  .certificate-actions {
+    width: 100%;
+  }
+
+
+  .refresh-button,
+  .upload-button {
+    flex: 1;
+  }
+
+
+  .certificate-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+/* =========================================
+   RESPONSIVE - SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+  .student-dashboard {
+    padding: 12px;
+  }
+
+
+  .dashboard-hero {
+    padding: 25px 20px;
+    border-radius: 18px;
+  }
+
+
+  .hero-content h1 {
+    font-size: 27px;
+  }
+
+
+  .hero-upload-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  .certificate-actions {
+    flex-direction: column;
+  }
+
+
+  .refresh-button,
+  .upload-button {
+    width: 100%;
+  }
+
+
+  .certificate-card-footer {
+    flex-direction: column;
+  }
+
+
+  .view-button,
+  .qr-button {
+    width: 100%;
+  }
+
+
+  .modal-overlay {
+    padding: 12px;
+  }
+
+
+  .modal-header,
+  .qr-modal-header {
+    padding: 20px;
+  }
+
+
+  .upload-form {
+    padding: 20px;
+  }
+
+}
