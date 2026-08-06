@@ -49,7 +49,7 @@ const VerifyRequest = () => {
       setLoading(true);
 
       const response = await fetch(
-        "http://localhost:5000/api/verifier-requests",
+        `${import.meta.env.VITE_API_URL}/api/verifier-requests`,
         {
           method: "POST",
 

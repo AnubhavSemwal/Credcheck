@@ -102,7 +102,7 @@ const AdminDashboard = () => {
       const token = getToken();
 
       const response = await fetch(
-        "http://localhost:5000/api/admin/stats",
+         `${import.meta.env.VITE_API_URL}/api/admin/stats`,
         {
           method: "GET",
           headers: {
@@ -158,7 +158,7 @@ const deleteUser = async (userId) => {
     const token = getToken();
 
     const response = await fetch(
-      `http://localhost:5000/api/admin/users/${userId}`,
+      `${import.meta.env.VITE_API_URL}/api/admin/users/${userId}`,
       {
         method: "DELETE",
         headers: {
@@ -210,7 +210,7 @@ const toggleBlockUser = async (userId) => {
     const token = getToken();
 
     const response = await fetch(
-      `http://localhost:5000/api/admin/users/${userId}/block`,
+      `${import.meta.env.VITE_API_URL}/api/admin/users/${userId}/block`,
       {
         method: "PUT",
         headers: {
@@ -261,7 +261,7 @@ const toggleBlockUser = async (userId) => {
       const token = getToken();
 
       const response = await fetch(
-        "http://localhost:5000/api/admin/students",
+        `${import.meta.env.VITE_API_URL}/api/admin/students`,
         {
           method: "GET",
           headers: {
@@ -314,7 +314,7 @@ const toggleBlockUser = async (userId) => {
       const token = getToken();
 
       const response = await fetch(
-        "http://localhost:5000/api/admin/verifiers",
+        `${import.meta.env.VITE_API_URL}/api/admin/verifiers`,
         {
           method: "GET",
           headers: {
@@ -367,7 +367,7 @@ const toggleBlockUser = async (userId) => {
       const token = getToken();
 
       const response = await fetch(
-        "http://localhost:5000/api/verifier-requests",
+        `${import.meta.env.VITE_API_URL}/api/verifier-requests`,
         {
           method: "GET",
           headers: {
@@ -421,7 +421,7 @@ const fetchReports = async () => {
     const token = getToken();
 
     const response = await fetch(
-      "http://localhost:5000/api/abuse-reports",
+      `${import.meta.env.VITE_API_URL}/api/abuse-reports`,
       {
         method: "GET",
         headers: {
@@ -471,7 +471,7 @@ const resolveReport = async (reportId) => {
 
     const response = await fetch(
 
-      `http://localhost:5000/api/abuse-reports/${reportId}/resolve`,
+      `${import.meta.env.VITE_API_URL}/api/abuse-reports/${reportId}/resolve`,
 
       {
 
@@ -525,7 +525,7 @@ const resolveReport = async (reportId) => {
     const token = getToken();
 
     const response = await fetch(
-      `http://localhost:5000/api/verifier-requests/${requestId}/status`,
+      `${import.meta.env.VITE_API_URL}/api/verifier-requests/${requestId}/status`,
       {
         method: "PATCH",
 
@@ -584,7 +584,7 @@ const resolveReport = async (reportId) => {
 
           const response = await fetch(
 
-             `http://localhost:5000/api/admin/certificates/${certificateId}/trusted`,
+             `${import.meta.env.VITE_API_URL}/api/admin/certificates/${certificateId}/trusted`,
 
         {
 
@@ -637,7 +637,7 @@ const resolveReport = async (reportId) => {
       const token = getToken();
 
       const response = await fetch(
-        "http://localhost:5000/api/admin/certificates",
+        `${import.meta.env.VITE_API_URL}/api/admin/certificates`,
         {
           method: "GET",
           headers: {

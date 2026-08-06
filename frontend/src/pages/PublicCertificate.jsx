@@ -24,7 +24,7 @@ const submitReport = async () => {
 
   try {
     const response = await fetch(
-  "http://localhost:5000/api/abuse-reports",
+  `${import.meta.env.VITE_API_URL}/api/abuse-reports`,
   
       {
         method: "POST",
@@ -60,7 +60,7 @@ const submitReport = async () => {
         setError("");
 
         const response = await fetch(
-          `http://localhost:5000/api/certificates/public/${publicLinkId}`
+          `${import.meta.env.VITE_API_URL}/api/certificates/public/${publicLinkId}`
         );
 
         const data = await response.json();
@@ -296,9 +296,9 @@ const submitReport = async () => {
 
                 {certificate.trustedOrganization && (
 
-        <span
-          style={{
-            marginLeft: "10px",
+                <span
+                  style={{
+                marginLeft: "10px",
             color: "green",
             fontSize: "14px"
           }}
