@@ -1,16 +1,515 @@
-# React + Vite
+# 🛡️ CredCheck
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**CredCheck** is a MERN-stack based digital certificate and internship verification platform designed to help students securely manage their credentials and allow organizations/verifiers to verify them.
 
-Currently, two official plugins are available:
+The platform provides role-based access for **Students, Verifiers, and Administrators**, along with certificate management, verification requests, public certificate verification, and abuse reporting.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 🚀 Live Demo
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Frontend
 
-## Expanding the ESLint configuration
+https://credcheck-frontend.onrender.com
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Backend API
+
+https://credcheck-backend-332e.onrender.com
+
+### GitHub Repository
+
+https://github.com/ankit17670/credcheck
+
+---
+
+## ✨ Features
+
+### 👨‍🎓 Student
+
+* Create an account and login
+* Google authentication
+* Secure JWT authentication
+* Upload certificates
+* Manage uploaded certificates
+* Track certificate verification
+* Generate public certificate verification links
+* View certificate status
+
+### 🏢 Verifier
+
+* Register as a verifier
+* Submit verifier registration request
+* Wait for administrator approval
+* View verification requests
+* Verify student certificates
+* Approve or reject certificate verification requests
+
+### 👨‍💼 Administrator
+
+* Admin dashboard
+* Manage users
+* Manage verifier requests
+* Approve or reject verifier accounts
+* Manage certificate verification
+* View abuse reports
+* Resolve reported issues
+* Role-based authorization
+
+### 🔐 Security & Authentication
+
+* JWT authentication
+* Password hashing using bcrypt
+* Google OAuth 2.0 authentication
+* Role-based authorization
+* Protected API routes
+* Environment variables for sensitive credentials
+
+### ☁️ Cloud Services
+
+* MongoDB Atlas for database hosting
+* Cloudinary for certificate/file storage
+* Nodemailer/Gmail for email services
+* Render for deployment
+
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+
+* React.js
+* Vite
+* React Router
+* Axios
+* Bootstrap
+* Bootstrap Icons
+* Google OAuth
+
+### Backend
+
+* Node.js
+* Express.js
+* MongoDB
+* Mongoose
+* JWT
+* bcryptjs
+* Multer
+* Cloudinary
+* Nodemailer
+* Google Auth Library
+
+### Deployment
+
+* GitHub
+* Render
+* MongoDB Atlas
+* Cloudinary
+
+---
+
+## 📂 Project Structure
+
+```text
+CredCheck/
+│
+├── backend/
+│   ├── config/
+│   │   ├── cloudinary.js
+│   │   ├── db.js
+│   │   └── email.js
+│   │
+│   ├── controllers/
+│   │   ├── abuseReportController.js
+│   │   ├── adminController.js
+│   │   ├── auth.controller.js
+│   │   ├── certificate.controller.js
+│   │   ├── verifier.controller.js
+│   │   └── verifierRequest.controller.js
+│   │
+│   ├── middleware/
+│   │   ├── auth.middleware.js
+│   │   ├── role.middleware.js
+│   │   └── upload.middleware.js
+│   │
+│   ├── models/
+│   │   ├── AbuseReport.js
+│   │   ├── Certificate.js
+│   │   ├── User.js
+│   │   └── VerifierRequest.js
+│   │
+│   ├── routes/
+│   │   ├── abuseReport.route.js
+│   │   ├── adminRoutes.js
+│   │   ├── auth.route.js
+│   │   ├── certificate.route.js
+│   │   ├── verifier.route.js
+│   │   └── verifierRequest.route.js
+│   │
+│   ├── server.js
+│   ├── package.json
+│   └── .env
+│
+├── frontend/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── styles/
+│   │   ├── App.jsx
+│   │   ├── App.css
+│   │   └── main.jsx
+│   │
+│   ├── public/
+│   ├── package.json
+│   └── vite.config.js
+│
+└── .gitignore
+```
+
+---
+
+## ⚙️ Installation
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/ankit17670/credcheck.git
+```
+
+```bash
+cd credcheck
+```
+
+---
+
+# 🔧 Backend Setup
+
+Go to the backend folder:
+
+```bash
+cd backend
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Create a `.env` file:
+
+```env
+PORT=5000
+
+MONGO_URI=your_mongodb_connection_string
+
+JWT_SECRET=your_jwt_secret
+JWT_EXPIRES_IN=7d
+
+GOOGLE_CLIENT_ID=your_google_client_id
+
+CLOUDINARY_CLOUD_NAME=your_cloudinary_cloud_name
+CLOUDINARY_API_KEY=your_cloudinary_api_key
+CLOUDINARY_API_SECRET=your_cloudinary_api_secret
+
+EMAIL_USER=your_email
+EMAIL_PASS=your_email_app_password
+```
+
+Start the backend:
+
+```bash
+npm start
+```
+
+Development mode:
+
+```bash
+npm run dev
+```
+
+Backend runs locally at:
+
+```text
+http://localhost:5000
+```
+
+---
+
+# 🎨 Frontend Setup
+
+Open another terminal:
+
+```bash
+cd frontend
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Create:
+
+```text
+frontend/.env
+```
+
+Add:
+
+```env
+VITE_API_URL=http://localhost:5000
+```
+
+Start the frontend:
+
+```bash
+npm run dev
+```
+
+The frontend will normally run at:
+
+```text
+http://localhost:5173
+```
+
+---
+
+# 🌐 Production Environment
+
+For the deployed frontend, the API environment variable is:
+
+```env
+VITE_API_URL=https://credcheck-backend-332e.onrender.com
+```
+
+The frontend is deployed on Render and communicates with the deployed backend through this environment variable.
+
+---
+
+## 🔑 Authentication Flow
+
+CredCheck supports two authentication methods:
+
+### Email & Password
+
+```text
+User
+ ↓
+Register
+ ↓
+Password hashed with bcrypt
+ ↓
+MongoDB
+ ↓
+Login
+ ↓
+JWT generated
+ ↓
+Frontend stores JWT
+```
+
+### Google Login
+
+```text
+User
+ ↓
+Google Login
+ ↓
+Google Credential
+ ↓
+CredCheck Backend
+ ↓
+Google Token Verification
+ ↓
+User created/found
+ ↓
+JWT generated
+ ↓
+Dashboard
+```
+
+---
+
+## 👥 User Roles
+
+| Role     | Access                                    |
+| -------- | ----------------------------------------- |
+| Student  | Certificates, dashboard, verification     |
+| Verifier | Certificate verification                  |
+| Admin    | Users, verifiers, reports, administration |
+
+---
+
+## 🔄 Certificate Verification Flow
+
+```text
+Student uploads certificate
+          ↓
+Certificate stored
+          ↓
+Verification request
+          ↓
+Verifier reviews certificate
+          ↓
+Verifier approves/rejects
+          ↓
+Certificate status updated
+          ↓
+Public verification available
+```
+
+---
+
+## 📡 API Overview
+
+### Authentication
+
+```text
+POST /api/auth/register
+POST /api/auth/login
+POST /api/auth/google
+```
+
+### Certificates
+
+```text
+/api/certificates
+```
+
+### Verifier
+
+```text
+/api/verifier
+```
+
+### Verifier Requests
+
+```text
+/api/verifier-request
+```
+
+### Admin
+
+```text
+/api/admin
+```
+
+### Abuse Reports
+
+```text
+/api/abuse-report
+```
+
+---
+
+## 🖥️ Deployment
+
+CredCheck is deployed using **Render**.
+
+### Backend
+
+```text
+Render Web Service
+        ↓
+Node.js + Express
+        ↓
+MongoDB Atlas
+        ↓
+Cloudinary
+        ↓
+Nodemailer
+```
+
+### Frontend
+
+```text
+Render Static Site
+        ↓
+React + Vite
+        ↓
+CredCheck Backend API
+```
+
+---
+
+## 🔒 Environment Variables
+
+Sensitive credentials should **never be committed to GitHub**.
+
+Make sure `.env` is included in `.gitignore`.
+
+Example:
+
+```text
+.env
+node_modules/
+dist/
+```
+
+Never publish:
+
+* MongoDB passwords
+* JWT secrets
+* Cloudinary API secrets
+* Gmail app passwords
+* Google OAuth secrets
+
+---
+
+## 📸 Screenshots
+
+Add screenshots of the project here:
+
+```text
+Home Page
+Login Page
+Student Dashboard
+Verifier Dashboard
+Admin Dashboard
+Certificate Verification
+```
+
+---
+
+## 🎯 Project Objectives
+
+The main objectives of CredCheck are:
+
+* Reduce fake certificate submission
+* Provide secure digital credential verification
+* Allow organizations to verify certificates
+* Provide role-based access
+* Provide publicly accessible certificate verification
+* Improve trust in student credentials
+* Provide a centralized certificate management platform
+
+---
+
+## 🔮 Future Improvements
+
+* QR code based certificate verification
+* Email notifications
+* Advanced admin analytics
+* Certificate expiry tracking
+* Blockchain-based credential verification
+* Improved document fraud detection
+* Mobile application
+* AI-assisted certificate verification
+
+---
+
+## 👨‍💻 Author
+
+**Ankit Singh**
+
+B.Tech Computer Science Engineering
+
+GitHub:
+https://github.com/ankit17670
+
+---
+
+## 📄 License
+
+This project is developed for educational and internship purposes.
