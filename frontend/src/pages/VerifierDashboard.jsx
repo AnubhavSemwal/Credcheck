@@ -27,7 +27,7 @@ const VerifierDashboard = () => {
       const token = localStorage.getItem("token");
 
       const response = await fetch(
-        "http://localhost:5000/api/verifier/pending-certificates",
+        `${import.meta.env.VITE_API_URL}/api/verifier/pending-certificates`,
         {
           method: "GET",
 
@@ -93,7 +93,7 @@ const VerifierDashboard = () => {
         localStorage.getItem("token");
 
       const response = await fetch(
-        `http://localhost:5000/api/verifier/certificates/${id}/status`,
+        `${import.meta.env.VITE_API_URL}/api/verifier/certificates/${id}/status`,
         {
           method: "PATCH",
 
