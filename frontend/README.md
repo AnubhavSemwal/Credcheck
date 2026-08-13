@@ -172,7 +172,7 @@ CredCheck/
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/ankit17670/credcheck.git
+git clone https://github.com/AnubhavSemwal/Credcheck
 ```
 
 ```bash
@@ -501,7 +501,7 @@ The main objectives of CredCheck are:
 
 ## 👨‍💻 Author
 
-**Ankit Singh**
+**Anubhav Semwal**
 
 B.Tech Computer Science Engineering
 
