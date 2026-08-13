@@ -18,7 +18,7 @@ https://credcheck-backend-332e.onrender.com
 
 ### GitHub Repository
 
-https://github.com/ankit17670/credcheck
+https://github.com/AnubhavSemwal
 
 ---
 
@@ -506,8 +506,7 @@ The main objectives of CredCheck are:
 B.Tech Computer Science Engineering
 
 GitHub:
-https://github.com/ankit17670
-
+https://github.com/AnubhavSemwal
 ---
 
 ## 📄 License
